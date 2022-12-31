@@ -1,14 +1,21 @@
 import unittest
 
 from minesweeper import game
+from minesweeper.field import *
 
-class TestGame(unittest.TestCase):
+
+class TestField(unittest.TestCase):
+    def test_createField(self):
+        """
+        Test the creation of a field
+        """
+        f = createField(2,2,1) 
+        self.assertEqual(len(f), 2)
+
+class testmenu(unittest.TestCase):
     def test_menu(self):
         """
-        Test the main menu
+        Test the menu
         """
-        result = game.menu()
-        self.assertEqual(result, "Minesweeper")
-
-if __name__ == '__main__':
-    unittest.main()
+        f = game.menu()
+        self.assertEqual(len(f), 2)
